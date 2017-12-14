@@ -19,7 +19,7 @@ Meteor.startup(function(){
       this.unblock();
       var future=new Future();
       // Comando Shell per lanciare la scansione.
-      // Il file per ora viene salvato nella cartella /public nella cartella del progetto, da sistemare per servire i file al browser
+      // Il file per ora viene salvato nella cartella /public del progetto, da sistemare per servire i file al browser
       // Sarà possibile scegliere l'estensione del file. 
       var command='hp-scan -o /home/aulettarappresentanti/meteor/Alboino_eXtreme_v2/public/' + fileName + '.png';
       exec(command, {maxBuffer : Infinity}, function(error,stdout,stderr){
