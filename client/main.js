@@ -37,10 +37,10 @@ Template.scanner.events({
     event.preventDefault();
     var fileName;
 
-    if(event.target.inputFileName.value){
-      fileName = event.target.inputFileName.value;
+    if(template.find('#inputFileName').value){
+      fileName = template.find('#inputFileName').value;
     }
-    if(!event.target.inputFileName.value){
+    if(!template.find('#inputFileName').value){
       fileName = 'hpscan' + date.valueOf();
     } 
     
