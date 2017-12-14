@@ -22,7 +22,7 @@ Meteor.startup(function(){
       // Il file per ora viene salvato nella cartella /public nella cartella del progetto, da sistemare per servire i file al browser
       // Sarà possibile scegliere l'estensione del file. 
       var command='hp-scan -o /home/aulettarappresentanti/meteor/Alboino_eXtreme_v2/public/' + fileName + '.png';
-      exec(command, {maxBuffer: 1024 * 500},function(error,stdout,stderr){
+      exec(command, {maxBuffer : 500 * 1024}, function(error,stdout,stderr){
         if(error){
           console.log(error);
           throw new Meteor.Error(500,command+" failed");
