@@ -13,7 +13,7 @@ Meteor.startup(function(){
   // Metodo per il server
   // Aggiungere variabili per la scelta del nome del file e dell'estensione
   Meteor.methods({
-    runCode: function () {
+    runCode: function (fileName) {
       // La chiamata aspetta asincrona che finisca l'esecuzione; 'unblock' permette
       // di mettere in coda le chiamate
       this.unblock();
@@ -21,7 +21,7 @@ Meteor.startup(function(){
       // Comando Shell per lanciare la scansione.
       // Il file per ora viene salvato nella cartella /public nella cartella del progetto, da sistemare per servire i file al browser
       // Sarà possibile scegliere l'estensione del file. 
-      var command='hp-scan -o /home/aulettarappresentanti/meteor/Alboino_eXtreme_v2/public/';
+      var command='hp-scan -o /home/aulettarappresentanti/meteor/Alboino_eXtreme_v2/public/' + fileName + '.png';
       exec(command, {maxBuffer: 1024 * 500},function(error,stdout,stderr){
         if(error){
           console.log(error);

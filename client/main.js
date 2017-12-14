@@ -4,17 +4,7 @@ import { Meteor } from 'meteor/meteor';
 
 import './main.html';
 
-// Template body generale. Va sistemato tutto in sotto-template.
-Template.body.events({
-  // click sul bottone #scanner, lancia il metodo server 'runCode' che runna il comando shell
-  // Aggiungere fileName e estensione per il file. Va fatto in un template a parte.
-  'click #scanner': function () {
-    Meteor.call('runCode', function (err, response) {
-      console.log(response);
-    });
-  }
-});
-
+// Template body generale. onRendered() -> quando il body è pronto
 Template.body.onRendered(function(){ 
   // Home page menu
   $(document)
@@ -38,3 +28,24 @@ Template.body.onRendered(function(){
     })
   ;
 })
+
+// Template Scanner.
+Template.scanner.events({
+  // click sul bottone #scanner, lancia il metodo server 'runCode' che runna il comando shell
+  // Aggiungere estensione per il file.
+  'click #scannerButton': function (event, template) {
+    event.preventDefault();
+    var fileName;
+
+    if(event.target.inputFileName.value){
+      fileName = event.target.inputFileName.value;
+    }
+    if(!event.target.inputFileName.value){
+      fileName = 'hpscan' + date.valueOf();
+    } 
+    
+    Meteor.call('runCode', fileName, function (err, response) {
+      console.log(response);
+    });
+  }
+});

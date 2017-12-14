@@ -59,6 +59,7 @@
       </div>
     </div>
 
+    <!-- Header content -->
     <div class="ui text container">
       <h1 class="ui inverted header">
         Alboino eXtreme v2
@@ -70,14 +71,10 @@
     </div>
   </div>
 
-  <div class="ui vertical stripe segment">
-    <div class="ui text container">
-      <h3 class="ui header">Scanner auletta (work in progress)</h3>
-      <p>Scansione di documenti con <code>hp-scan</code></p>
-      <a class="ui large blue button" id="scanner">Scanner</a>      
-    </div>
-  </div>
+  <!-- Scanner Template -->
+  {{> scanner}}
 
+  <!-- Footer -->
   <div class="ui inverted vertical footer segment">
     <div class="ui container">
       <div class="ui stackable inverted divided equal height stackable grid">
@@ -104,6 +101,23 @@
       </div>
     </div>
   </div>
+  <!-- end Footer -->
 </div>
 
 </body>
+
+<!-- Scanner Template -->
+<template name="scanner">
+  <div class="ui vertical stripe segment">
+    <div class="ui text container">
+      <h3 class="ui header">Scanner auletta (work in progress)</h3>
+      <p>Scansione di documenti con <code>hp-scan</code><br><i>(Salva in .png per ora)</i></p>
+      <div class="ui action input">
+        <input type="text" placeholder="Nome del file" name="inputFileName">
+        <button class="ui blue button" id="scannerButton">
+          SCAN
+        </button>
+      </div>     
+    </div>
+  </div>
+</template>
