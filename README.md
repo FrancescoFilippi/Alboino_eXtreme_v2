@@ -67,12 +67,12 @@ Per avere l'ambiente di sviluppo operativo, una volta installati i prerequisiti,
 4. Lanciare meteor, sempre nella root del progetto, per compilare Semantic UI
  
    ```
-   $ meteor npm install
+   $ meteor
    ```
  
    interrompere poi il processo di meteor e spostarsi in `client/lib/semantic-ui/`, dove a questo punto ci sarà, oltre al resto della libreria, una copia del file creato al punto 2 generato da Semantic. Rimuovere il file `.custom.semantic.json` (il file preceduto dal punto è la copia).
    
-5. Dalla root del progetto, lanciando nuovamente meteor si dovrebbe avere tutto l'ambiente funzionante, raggiungibile all'indirizzo `http://localhost:3000/`.
+5. Dalla root del progetto, lanciando nuovamente `$ meteor` si dovrebbe ottenere tutto l'ambiente funzionante, raggiungibile all'indirizzo `http://localhost:3000/`.
 
 ## Deployment
 
