@@ -110,14 +110,39 @@
 <template name="scanner">
   <div class="ui vertical stripe segment">
     <div class="ui text container">
-      <h3 class="ui header">Scanner auletta (work in progress)</h3>
-      <p>Scansione di documenti con <code>hp-scan</code><br><i>(Salva in .png per ora)</i></p>
-      <div class="ui action input">
-        <input type="text" placeholder="Nome del file" id="inputFileName">
-        <button class="ui blue button" id="scannerButton">
-          SCAN
-        </button>
-      </div>     
+      <h3 class="ui header">Scanner auletta</h3>
+      <p>Scansione di documenti con <code>hp-scan</code>.<i> (per ora solo .png)</i></p>
+      <button class="ui large button blue create_btn" type="button" id="test">HP-SCAN</button>
+      <div class="ui modal test">
+        <i class="close icon"></i>
+        <div class="header">
+          Scannerizza un file e ricevilo per email
+        </div>
+        <div class="content">
+          <div class="description">
+            <div class="ui header">Scegli il nome con cui verrà salvato il file e l'indirizzo email a cui inviarlo:</div>
+            <form class="ui form">
+              <div class="field">
+                <label>Nome File <i> (se non specificato verrà assegnato casualmente)</i></label>
+                <input type="text" name="inputNomeFile" placeholder="Nome file">
+              </div>
+              <div class="field">
+                <label>Indirizzo email</label>
+                <input type="text" name="inputEmailAddress" placeholder="Indirizzo email">
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="actions">
+          <div class="ui black deny button">
+            Cancella
+          </div>
+          <div class="ui positive right labeled icon button" id="scannerButton">
+            SCAN&amp;INVIA
+            <i class="mail icon"></i>
+          </div>
+        </div>
+      </div>    
     </div>
   </div>
 </template>
