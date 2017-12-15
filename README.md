@@ -8,8 +8,7 @@ Le istruzioni permettono di avere una copia locale e funzionante del progetto, p
 
 ### Prerequisiti
 
-Per funzionare, Alboino_eXtreme_v2 ha bisogno di [MongoDB](https://www.mongodb.com/it) e [Meteor](https://www.meteor.com/). 
-[Semantic UI](https://semantic-ui.com/) è già pre-installato nel progetto e va solo compilato, le relative istruzioni saranno presentate nella sezione di __installazione__.
+Per funzionare, Alboino_eXtreme_v2 ha bisogno di [MongoDB](https://www.mongodb.com/it) e [Meteor](https://www.meteor.com/).  [Semantic UI](https://semantic-ui.com/) è già pre-installato nel progetto e va solo compilato, le relative istruzioni saranno presentate nella sezione di __installazione__.
 
 Installazione di __MongoDB Community Edition__:
 * [macOS](https://docs.mongodb.com/getting-started/shell/tutorial/install-mongodb-on-os-x/)
