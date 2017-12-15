@@ -41,15 +41,15 @@ Per avere l'ambiente di sviluppo operativo, una volta installati i prerequisiti,
    ```
    oppure `$ git clone https://github.com/FrancescoFilippi/alboino_eXtreme_v2 Alboino_eXtreme_v2`
    
-2. Spostarsi nella cartella clonata `$ cd Alboino_eXtreme_v2`e creare
+2. Spostarsi nella cartella clonata `$ cd Alboino_eXtreme_v2` e creare
    
-   . una cartella `/public` nella root del progetto, dove verranno salvati i file statici pubblici
+    *  una cartella `/public` nella root del progetto, dove verranno salvati i file statici pubblici
    
    ```
    $ mkdir public
    ```
    
-   . due cartelle `/lib/semantic-ui/` e il file `/lib/semantic-ui/custom.semantic.json` all'interno di `/client`, dove verranno compilati e salvati tutti i file di Semantic UI
+    *  due cartelle `/lib/semantic-ui/` e il file `/lib/semantic-ui/custom.semantic.json` all'interno di `/client`, dove verranno compilati e salvati tutti i file di Semantic UI
    
    ```
    $ cd client
