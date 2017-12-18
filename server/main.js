@@ -13,12 +13,12 @@ Meteor.startup(function(){
 
   // Set env mail server variable
   // Da sistemare, ultra insicuro.
-  process.env.MAIL_URL = "smtps://postmaster@sandboxe3362d49940a40608beb65efd5554f84.mailgun.org:94193a77589e5d418177b0d728d5a169@smtp.mailgun.org:587";
+  process.env.MAIL_URL = "smtp://postmaster%40sandboxe3362d49940a40608beb65efd5554f84.mailgun.org:94193a77589e5d418177b0d728d5a169@smtp.mailgun.org:587";
  
   // Metodi per il server
   Meteor.methods({
-    // Metodo per lanciare comandi shell
-    runCode: function(fileName) {
+    // Lancia comando shell hp-scan sul server
+    hpscan: function(fileName) {
       
       // Check input
       check([fileName], [String]);
@@ -46,7 +46,7 @@ Meteor.startup(function(){
     sendMail: function(to, from, subject, html, attachments){
 
       // Check inputs
-      check([to, from, subject, html], [String]);
+      //check([to, from, subject, html], [String]);
 
       // Metodo asincrono
       this.unblock();
@@ -55,8 +55,9 @@ Meteor.startup(function(){
       Email.send({
 	      to: to,
 	      from: from,
-	      subject: subject,
-	      attachments: attachments
+        subject: subject,
+        html: html,
+        attachments: attachments
 	    });
     },
   });

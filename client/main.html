@@ -111,9 +111,9 @@
   <div class="ui vertical stripe segment">
     <div class="ui text container">
       <h3 class="ui header">Scanner auletta</h3>
-      <p>Scansione di documenti con <code>hp-scan</code>.<i> (per ora solo .png)</i></p>
-      <button class="ui large button blue create_btn" type="button" id="test">HP-SCAN</button>
-      <div class="ui modal test">
+      <p>Scansione di documenti con <code>hp-scan</code>.</p>
+      <button class=" fluid ui large button blue create_btn" type="button" id="openScannerAndEmailButton">HP-SCAN</button>
+      <div class="ui modal scannerAndMailModal">
         <i class="close icon"></i>
         <div class="header">
           Scannerizza un file e ricevilo per email
@@ -123,22 +123,39 @@
             <div class="ui header">Scegli il nome con cui verrà salvato il file e l'indirizzo email a cui inviarlo:</div>
             <form class="ui form">
               <div class="field">
-                <label>Nome File <i> (se non specificato verrà assegnato casualmente)</i></label>
-                <input type="text" name="inputNomeFile" placeholder="Nome file">
+                <label>Nome File<i> (se non specificato verrà assegnato casualmente)</i></label>
+                <input type="text" name="inputNomeFile" id="inputNomeFile" placeholder="Nome file">
               </div>
+              <!-- <div class="field">
+                <label>Estensione</label>
+                <div class="inline fields">
+                  <div class="field">
+                    <div class="ui radio checkbox">
+                      <input type="radio" name="scannedFileExtension" checked="checked" value=".png">
+                      <label>.png</label>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="ui radio checkbox">
+                      <input type="radio" name="scannedFileExtension" value=".jpg">
+                      <label>.jpg</label>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
               <div class="field">
                 <label>Indirizzo email</label>
-                <input type="text" name="inputEmailAddress" placeholder="Indirizzo email">
+                <input type="text" name="inputEmailAddress" id="inputEmailAddress" placeholder="Indirizzo email">
               </div>
             </form>
           </div>
         </div>
         <div class="actions">
-          <div class="ui black deny button">
+          <div class="ui red deny button">
             Cancella
           </div>
           <div class="ui positive right labeled icon button" id="scannerButton">
-            SCAN&amp;INVIA
+            SCAN&amp;SEND
             <i class="mail icon"></i>
           </div>
         </div>
