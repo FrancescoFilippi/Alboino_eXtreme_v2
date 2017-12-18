@@ -21,7 +21,7 @@ Meteor.startup(function(){
     hpscan: function(fileName) {
       
       // Check input
-      check([fileName], [String]);
+      // check([fileName], [String]);
 
       // Metodo asincrono
       this.unblock();
