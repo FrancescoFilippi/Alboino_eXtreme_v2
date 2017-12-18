@@ -13,7 +13,13 @@ Meteor.startup(function(){
 
   // Set env mail server variable
   // Da sistemare, ultra insicuro.
-  process.env.MAIL_URL = "smtp://postmaster%40sandboxe3362d49940a40608beb65efd5554f84.mailgun.org:94193a77589e5d418177b0d728d5a169@smtp.mailgun.org:587";
+  var smtp = {
+    username: 'alboinoextremev2@gmail.com',
+    password: 'alboino1',
+    server: 'smtp.gmail.com',
+    port: 587
+  }
+  process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
  
   // Metodi per il server
   Meteor.methods({
