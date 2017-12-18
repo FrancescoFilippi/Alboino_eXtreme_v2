@@ -49,7 +49,7 @@ Template.scanner.events({
           };
           Meteor.call('hpscan', fileName, function (err, response) {
             console.log(response);
-            Meteor.call('sendMail', emailAddress, "postmaster@sandboxe3362d49940a40608beb65efd5554f84.mailgun.org", "HP-SCAN: " + fileName, "" ,attachments, 
+            Meteor.call('sendMail', emailAddress, "postmaster@sandboxe3362d49940a40608beb65efd5554f84.mailgun.org", "HP-SCAN: " + fileName, "No ma, brava Fede!" ,attachments, 
             function(err, response){
               console.log(response);
             });
