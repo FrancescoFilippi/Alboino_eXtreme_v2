@@ -43,7 +43,7 @@ Template.scanner.events({
           var date = new Date();
           var fileName = ($('input[name="inputNomeFile"]').val()) ? ($('input[name="inputNomeFile"]').val()) : 'hpscan-' + date.valueOf();
           var emailAddress = ($('input[name="inputEmailAddress"]').val());
-          var isSendingMail = $('#mailConfirm').attr("checked", true);
+          var isSendingMail = $('#mailConfirm').attr('checked');
           var attachments = {
             filename: fileName + '.png',
             path: '/home/aulettarappresentanti/meteor/Alboino_eXtreme_v2/public/scanner/' + fileName + '.png',
