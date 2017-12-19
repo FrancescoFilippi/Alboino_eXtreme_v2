@@ -34,15 +34,18 @@ Template.scanner.events({
 
   'click #openScannerAndEmailButton': function(event, template){
     event.preventDefault();
+    var sendMail;
     $(function(){
       $('#ScanningAndSendingProgressBar').progress();
       $(".scannerAndMailModal").modal('show');
       $('#mailConfirm').checkbox({
         onChecked: function(){
           $('#emailField').removeClass("error disabled");
+          sendMail = true;
         },
         onUnchecked: function(){
           $('#emailField').addClass("error disabled");
+          sendMail = false;
         }
       });
       $(".scannerAndMailModal").modal({
@@ -59,10 +62,10 @@ Template.scanner.events({
           // incrementProgressBar('#ScanningAndSendingProgressBar');
           Meteor.call('hpscan', fileName, function (err, response) {
             console.log(response);
-            if($('#mailConfirm').is(':checked')){
+            if(sendMail == true){
               Meteor.call('sendMail', emailAddress, "postmaster@sandboxe3362d49940a40608beb65efd5554f84.mailgun.org", "HP-SCAN: " + fileName, "No ma, brava Fede!" ,attachments, 
               function(err, response){
-                console.log(response);
+                console.log(err);
               });
             }
           });
