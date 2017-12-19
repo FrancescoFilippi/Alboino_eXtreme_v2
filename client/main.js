@@ -36,6 +36,7 @@ Template.scanner.events({
     event.preventDefault();
     $(function(){
       $('#ScanningAndSendingProgressBar').progress();
+      $(".scannerAndMailModal").modal('show');
       $('#mailConfirm').checkbox({
         onChecked: function(){
           $('#emailField').removeClass("error disabled");
@@ -44,7 +45,6 @@ Template.scanner.events({
           $('#emailField').addClass("error disabled");
         }
       });
-      $(".scannerAndMailModal").modal('show');
       $(".scannerAndMailModal").modal({
         closable: true,
         onApprove: function(){
