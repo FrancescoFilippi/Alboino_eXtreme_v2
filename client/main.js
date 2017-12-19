@@ -37,7 +37,6 @@ Template.scanner.events({
     $(function(){
       $('#ScanningAndSendingProgressBar').progress();
       $(".scannerAndMailModal").modal('show');
-      incrementProgressBar('#ScanningAndSendingProgressBar');
       $(".scannerAndMailModal").modal({
         closable: true,
         onApprove: function(){
@@ -68,12 +67,12 @@ Template.scanner.events({
 });
 
 //$("#chart").attr("data-percent", value.toString());
-function incrementProgressBar(elem){
-  var secs = 1000 * 60;
-  var count = 0;
-  setInterval(function() {
-      var $progressBar = $(elem);
-      count += 10;
-      $progressBar.attr("data-percent", count.toString());
-  }, secs);
-}
+// function incrementProgressBar(elem){
+//   var secs = 1000 * 60;
+//   var count = 0;
+//   setInterval(function() {
+//       var $progressBar = $(elem);
+//       count += 10;
+//       $progressBar.attr("data-percent", count.toString());
+//   }, secs);
+// }
