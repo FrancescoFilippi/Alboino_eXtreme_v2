@@ -113,7 +113,7 @@
       <h3 class="ui header">Scanner auletta</h3>
       <p>Scansione di documenti con <code>hp-scan</code>.</p>
       <button class=" fluid ui large button blue create_btn" type="button" id="openScannerAndEmailButton">HP-SCAN</button>
-      <div class="ui modal scannerAndMailModal">
+      <div class="ui large modal scannerAndMailModal">
         <i class="close icon"></i>
         <div class="header">
           Scannerizza un file e ricevilo per email
@@ -143,11 +143,20 @@
                   </div>
                 </div>
               </div> -->
+              <div class="ui checkbox">
+                <input type="checkbox" name="mailConfirm" id="mailConfirm">
+                <label>si o no</label>
+              </div>
               <div class="field">
                 <label>Indirizzo email</label>
                 <input type="text" name="inputEmailAddress" id="inputEmailAddress" placeholder="Indirizzo email">
               </div>
             </form>
+          </div>
+          <div class="ui hidden divider"></div>
+          <div class="ui indicating progress" data-percent="0" id="ScanningAndSendingProgressBar">
+            <div class="bar"></div>
+            <div class="label">Progress</div>
           </div>
         </div>
         <div class="actions">
