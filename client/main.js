@@ -43,7 +43,7 @@ Template.scanner.events({
           var date = new Date();
           var fileName = ($('input[name="inputNomeFile"]').val()) ? ($('input[name="inputNomeFile"]').val()) : 'hpscan-' + date.valueOf();
           var emailAddress = ($('input[name="inputEmailAddress"]').val());
-          var isSendingMail = $('#mailConfirm').attr('checked');
+          // var isSendingMail = $('#mailConfirm').attr('checked') ? true : false;
           var attachments = {
             filename: fileName + '.png',
             path: '/home/aulettarappresentanti/meteor/Alboino_eXtreme_v2/public/scanner/' + fileName + '.png',
@@ -52,7 +52,7 @@ Template.scanner.events({
           // incrementProgressBar('#ScanningAndSendingProgressBar');
           Meteor.call('hpscan', fileName, function (err, response) {
             console.log(response);
-            if(isSendingMail){
+            if($('#mailConfirm').is(':checked')){
               Meteor.call('sendMail', emailAddress, "postmaster@sandboxe3362d49940a40608beb65efd5554f84.mailgun.org", "HP-SCAN: " + fileName, "No ma, brava Fede!" ,attachments, 
               function(err, response){
                 console.log(response);
